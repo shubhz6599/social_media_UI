@@ -1,0 +1,113 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Online people container */
+.online-people-container {
+  max-width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 3rem;
+}
+
+/* Header styling */
+.online-header {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.online-header h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Online people list */
+.online-list {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 60vh;
+  /* Adjustable based on your needs */
+}
+
+/* Individual user styling */
+.online-user {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.online-user:hover {
+  background-color: #f0f0f0;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.status {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .online-people-container {
+    max-width: 70%;
+    margin: 2rem 0 0 7.5rem;
+    border-radius: 5%;
+  }
+
+  .online-header {
+    padding: 10px;
+  }
+
+  .online-header h2 {
+    font-size: 15px;
+
+  }
+
+  .username {
+    font-size: 12px;
+  }
+
+  .online-user {
+    padding: 8px;
+  }
+
+
+
+  .status {
+    font-size: 9px;
+  }
+}

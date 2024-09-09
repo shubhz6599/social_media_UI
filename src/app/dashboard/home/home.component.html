@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <div class="create-post-container">
+    <div class="create-post-header">
+      <h3>Create Post</h3>
+    </div>
+    <div class="create-post-body">
+      <textarea [(ngModel)]="postText" class="post-input" placeholder="What's on your mind?"></textarea>
+      <div class="post-options">
+        <label for="file-upload" class="file-upload-label">
+          <input type="file" id="file-upload" class="file-upload-input" accept=".jpg,.jpeg,.png"
+            (change)="onFileSelected($event)">
+          <span>Add Photo/Video</span>
+        </label>
+      </div>
+      <button class="post-button" (click)="createPost()">Post</button>
+    </div>
+  </div>
+
+
+  <div class="news-feed-container">
+    <!-- Example of a Single Post -->
+    <div class="post" *ngFor="let post of posts">
+      <div class="post-header">
+        <!-- <img src="" alt="User Avatar" class="avatar"> -->
+        <div class="user-info">
+          <span class="username">{{post.username | titlecase}}</span>
+          <span class="timestamp">{{post.createdAt | posttime}}</span>
+        </div>
+      </div>
+      <div class="post-content">
+        <p>{{post.content}}</p>
+        <img *ngIf="post.image" [src]="getImageUrl(post.image)" alt="Post Image" class="post-image">
+      </div>
+      <div class="post-actions">
+        <button class="action-btn" [ngClass]="{'liked': isLiked(post._id), 'not-liked': !isLiked(post._id)}"
+          (click)="likePost(post._id)">
+          Like
+        </button>
+        <span class="likes-count">{{post.likes.length}} likes</span>
+      </div>
+    </div>
+    <!-- Repeat for more posts -->
+  </div>
+</div>

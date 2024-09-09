@@ -1,0 +1,32 @@
+/* HTML: <div class="loader"></div> */
+/* Loader Styles */
+.loader {
+  width: 120px;
+  height: 20px;
+  -webkit-mask: linear-gradient(90deg, #000 70%, #0000 0) left/20% 100%;
+  background: linear-gradient(#0037fc 0 0) left -25% top 0 /20% 100% no-repeat #000000;
+  animation: l7 1s infinite steps(6);
+}
+
+/* Loader Animation */
+@keyframes l7 {
+  100% {
+    background-position: right -25% top 0;
+  }
+}
+
+/* Full Page Cover */
+.full-page-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent white */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* Ensure it is above other content */
+}

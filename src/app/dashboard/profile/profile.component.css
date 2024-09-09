@@ -1,0 +1,202 @@
+/* src/app/profile/profile.component.css */
+
+.profile-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-details {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  margin-bottom: 2rem;
+  /* Add space between profile details and posts */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-picture {
+  width: 120px;
+  /* Slightly larger profile picture */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  /* Larger font size for name */
+}
+
+.profile-info p {
+  margin: 0.5rem 0;
+}
+
+.edit-profile-form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-submit {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.profile-posts {
+  margin-top: 2rem;
+
+}
+
+.no-posts-message {
+  text-align: center;
+  color: #777;
+}
+
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.likes-count {
+  font-weight: bold;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+button {
+  border: none !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .profile-details {
+    margin-left: 25%;
+  }
+
+  .profile-picture {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-info h2 {
+    font-size: 1rem;
+  }
+
+  .profile-info p {
+    font-size: 0.7rem;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 0.6rem;
+  }
+
+  .profile-title {
+    font-size: 1.2rem;
+  }
+
+  .post {
+    margin-left: 25%;
+    width: 85.5%;
+  }
+
+  .edit-profile-form {
+    margin-left: 25%;
+  }
+
+  .edit-profile-form h2 {
+    font-size: 1rem;
+  }
+
+  label {
+    font-size: 0.7rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.7rem;
+  }
+
+  .profile-posts {
+    min-height: 100vh;
+    max-height: auto;
+  }
+}

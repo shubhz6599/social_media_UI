@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <div class="online-people-container">
+    <!-- Online People Header -->
+    <div class="online-header">
+      <h2>People's</h2>
+    </div>
+
+    <!-- Online People List -->
+    <div class="online-list">
+      <div *ngFor="let user of onlineUsers" class="online-user">
+        <img *ngIf="user.profilePicture" [src]="getImageUrl(user.profilePicture)" alt="User Avatar" class="avatar">
+        <img *ngIf="!user.profilePicture"
+          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+          alt="User Avatar" class="avatar">
+        <div class="user-info" (click)="navigateToChat(user._id)">
+          <span class="username">{{ user.userName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

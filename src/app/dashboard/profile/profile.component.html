@@ -1,0 +1,71 @@
+<!-- src/app/profile/profile.component.html -->
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <div class="profile-container">
+
+    <!-- User Details -->
+    <div class="profile-details">
+      <div class="profile-header">
+        <img [src]="getImageUrl(user.profilePicture)" alt="Profile Picture" class="profile-picture">
+
+        <div class="profile-info">
+          <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+          <p>{{ user.userName || 'No username provided' }}</p>
+          <p>{{ user.bio || 'No bio available' }}</p>
+          <!-- Edit Profile Button -->
+          <button (click)="toggleEditMode()">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Profile Form -->
+    <div *ngIf="isEditMode" class="edit-profile-form">
+      <h2>Edit Profile</h2>
+      <form (ngSubmit)="updateProfile()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" [(ngModel)]="user.firstName" name="firstName" id="firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" [(ngModel)]="user.lastName" name="lastName" id="lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" [(ngModel)]="user.dob" name="dob" id="dob">
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <textarea [(ngModel)]="user.bio" name="bio" id="bio" placeholder="Bio"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="profilePicture">Profile Picture</label>
+          <input type="file" (change)="onFileSelected($event)" id="profilePicture">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Save Changes</button>
+          <button type="button" class="btn-cancel" (click)="toggleEditMode()">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- User Posts -->
+    <div class="profile-posts" *ngIf="isEditMode">
+      <div class="post">
+        <h1 class="profile-title">My Posts</h1>
+
+      </div>
+
+      <div *ngIf="posts.length === 0" class="no-posts-message">No posts available</div>
+      <div *ngFor="let post of posts" class="post">
+        <img [src]="getImageUrl(post.image)" alt="Post Image" class="post-image">
+        <p>{{ post.content }}</p>
+        <div class="post-info">
+          <span class="likes-count">{{ post.likes.length || 0 }} Likes</span>
+          <button (click)="deletePost(post._id)" class="btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

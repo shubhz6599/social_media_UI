@@ -1,0 +1,43 @@
+<!-- src/app/components/online-friends/online-friends.component.html -->
+
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+  <div *ngFor="let friend of onlineFriends">
+    <span>{{ friend.name }}</span>
+    <button (click)="sendFriendRequest(friend.id)">Add Friend</button>
+  </div>
+
+  <div *ngIf="suggestions.length > 0" class="row">
+    <h3>Suggested Friends</h3>
+    <ul class="suggestions-list">
+      <li *ngFor="let user of suggestions" class="suggestion-item">
+        <div>
+          <img src="assets/logo.jpg" class="dprequest" alt="dp of requested">
+          <span class="suggestion-name">{{ user.userName }}</span>
+        </div>
+        <button *ngIf="user.requestStatus === 'none'" (click)="sendFriendRequest(user._id)"
+          class="add-friend-button">Add Friend
+        </button>
+        <button *ngIf="user.requestStatus === 'pending'" class="request-sent-button" disabled>Request Sent
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Display friend requests -->
+  <div *ngIf="friendRequests.length > 0" class="row">
+    <h3>Pending Friend Requests</h3>
+    <ul class="friend-requests-list">
+      <li *ngFor="let request of friendRequests" class="friend-request-item">
+        <div>
+          <img src="assets/logo.jpg" class="dprequest" alt="dp of requested">
+          <span class="requester-name">{{ request.requester.userName }}</span>
+        </div>
+        <button (click)="confirmFriendRequest(request._id)" class="confirm-button">Confirm</button>
+        <button (click)="rejectFriendRequest(request._id)" class="reject-button">Reject</button>
+      </li>
+    </ul>
+  </div>
+
+
+</div>

@@ -1,0 +1,114 @@
+body {
+  background: linear-gradient(135deg, #f3f4f6, #e0eafc);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 450px;
+  margin-top: 50px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Custom input styles */
+.form-control {
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #a3c2f3;
+  box-shadow: 0 0 8px rgba(163, 194, 243, 0.5);
+}
+
+.form-floating>label {
+  font-weight: 500;
+}
+
+/* Custom button styles */
+.btn-custom {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, #5a0ab7, #2063e8);
+  transform: scale(1.05);
+}
+
+.btn-custom:active {
+  transform: scale(0.98);
+}
+
+/* Custom styles for active tab */
+.nav-tabs .nav-link.active {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom styles for inactive tabs */
+.nav-tabs .nav-link {
+  color: #6a11cb;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link:hover {
+  background: rgba(106, 17, 203, 0.1);
+}
+
+/* Custom error message styles */
+.text-danger {
+  font-size: 0.875rem;
+}
+
+/* Container styling for centering forms */
+.container {
+  max-width: 600px;
+}
+
+/* Styling for form controls */
+.form-control-custom {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control-custom:focus {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  border-color: rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for buttons */
+.btn-custom {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .form-floating {
+    font-size: 0.875rem;
+  }
+}

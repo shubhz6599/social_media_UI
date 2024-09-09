@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <ul class="navbar__menu">
+    <li class="navbar__item" routerLink="/Dashboard/home" [routerLinkActive]="['active-menu']"
+      [routerLinkActiveOptions]="{ exact: true }">
+      <a class="navbar__link"><i class="bi bi-house"></i></a>
+    </li>
+    <li class="navbar__item" routerLink="/Dashboard/online-friends" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-chat-left"></i></a>
+    </li>
+    <li class="navbar__item" routerLink="/Dashboard/profile" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-people-fill"></i></a>
+    </li>
+    <li class="navbar__item" routerLink="/Dashboard/city-services" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-file-earmark"></i></a>
+    </li>
+    <li class="navbar__item" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-x-diamond-fill"></i></a>
+    </li>
+    <li class="navbar__item" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-question-circle-fill"></i></a>
+    </li>
+    <li class="navbar__item" [routerLinkActive]="['active-menu']">
+      <a class="navbar__link"><i class="bi bi-gear-fill"></i></a>
+    </li>
+    <li class="navbar__item" [routerLinkActive]="['active-menu']" (click)="logout()">
+      <a class="navbar__link"><i class="bi bi-box-arrow-in-right"></i></a>
+    </li>
+  </ul>
+</nav>

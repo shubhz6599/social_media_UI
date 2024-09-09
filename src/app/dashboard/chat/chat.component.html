@@ -1,0 +1,30 @@
+<!-- src/app/chat/chat.component.html -->
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <!-- Chat Container -->
+  <div class="chat-container">
+    <!-- Chat Header to Display Username -->
+    <div class="chat-header">
+      <h3>{{ chatUserName | titlecase}}</h3>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="messages">
+      <div *ngFor="let message of messages">
+        <!-- Apply 'sent' or 'received' class based on message sender -->
+        <div [ngClass]="message.senderId._id === currentUserId ? 'sent' : 'received'">
+          <div class="message-content">
+            {{ message.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input for New Message -->
+    <div class="message-input">
+      <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { io } from 'socket.io-client';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
   private socket: any;
-  private readonly URL = 'http://localhost:3000'; // Ensure this matches your server's URL
+  private readonly URL = environment.ogApi; // Ensure this matches your server's URL
 
   constructor(private http: HttpClient) {
     this.socket = io(this.URL);

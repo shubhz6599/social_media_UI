@@ -28,9 +28,7 @@ h2 {
   box-shadow: 0 0 8px rgba(163, 194, 243, 0.5);
 }
 
-.form-floating>label {
-  font-weight: 500;
-}
+
 
 /* Custom button styles */
 .btn-custom {
@@ -108,7 +106,5 @@ h2 {
     padding: 0 15px;
   }
 
-  .form-floating {
-    font-size: 0.875rem;
-  }
+
 }

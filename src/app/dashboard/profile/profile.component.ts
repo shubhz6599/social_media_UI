@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/admin/registration.service';
 import { ApiService } from '../../services/api/api.service';
+import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-profile',
@@ -102,6 +103,6 @@ export class ProfileComponent implements OnInit {
   }
 
   getImageUrl(imagePath: string): string {
-    return imagePath ? `http://localhost:3000/${imagePath.replace('\\', '/')}` : 'default-image-url';
+    return imagePath ? `${environment.ogApi}/${imagePath.replace('\\', '/')}` : 'default-image-url';
   }
 }

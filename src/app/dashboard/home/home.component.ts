@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api/api.service';
+import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-home',
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
   }
 
   getImageUrl(imagePath: string): string {
-    return `http://localhost:3000/${imagePath.replace('\\', '/')}`;
+    return `${environment.ogApi}/${imagePath.replace('\\', '/')}`;
   }
 
   likePost(postId: string): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OnlinePeopleService } from '../../services/online-people.service';
+import { environment } from '../../../../environment';
 
 @Component({
   selector: 'app-online-people',
@@ -34,6 +35,6 @@ export class OnlinePeopleComponent implements OnInit {
     this.router.navigateByUrl(`/Dashboard/chat/${userId}`);
   }
   getImageUrl(imagePath: string): string {
-    return imagePath ? `http://localhost:3000/${imagePath.replace('\\', '/')}` : 'default-image-url';
+    return imagePath ? `${environment.ogApi}/${imagePath.replace('\\', '/')}` : 'default-image-url';
   }
 }

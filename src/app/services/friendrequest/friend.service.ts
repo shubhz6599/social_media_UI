@@ -2,12 +2,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FriendService {
-  private apiUrl = 'http://localhost:3000/friends'; // Replace with your backend URL
+  private apiUrl = environment.ogApi + '/friends'; // Replace with your backend URL
 
   constructor(private http: HttpClient) { }
 

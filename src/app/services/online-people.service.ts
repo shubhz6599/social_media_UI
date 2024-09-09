@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OnlinePeopleService {
-  private apiUrl = 'http://localhost:3000/user/all'; // Replace with your API endpoint
+  private apiUrl = environment.ogApi + '/user/all'; // Replace with your API endpoint
 
   constructor(private http: HttpClient) { }
 
